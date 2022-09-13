@@ -1,4 +1,4 @@
-# Real Dash XML example for EMU Black
+# Real Dash USB to CAN XML example for EMU Black
 
 This repository contains XML files and maybe other examples needed to connect Ecumaster EMU Black with USB to CAN Analyzer via CAN-H and CAN-L inputs/outputs.
 
@@ -8,11 +8,11 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 
 
 # Table of Contents
-1. [Hardware](#example)
-2. [Software](#example2)
-3. [XML File](#third-example)
-4. [Real Dash custom dash](#fourth-examplehttpwwwfourthexamplecom)
-5. [To Do](#to-do)
+1. [Hardware](##Hardware)
+2. [Software](##Software)
+3. [XML File](##XML%20File)
+4. [Real Dash custom dash](##Real%20Dash%custom%20dash)
+5. [To Do](##To%20Do)
 
 
 ## Hardware
