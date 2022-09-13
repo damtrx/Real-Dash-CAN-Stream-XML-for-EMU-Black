@@ -11,7 +11,7 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 1. [Hardware](#Hardware)
 2. [Software](#Software)
 3. [XML File](#xml-File)
-4. [Real Dash custom dash](#real-dash-custom-dash)
+4. [Real Dash configuratio](#real-dash-configuration)
 5. [To Do](#to-to)
 
 
@@ -50,19 +50,32 @@ If needed explre the software folder for more information about the module
 
 ![Software config](/img/usb-to-can-software.png)
 
-1. Select **COM** port X
-2. The default BAUD rate is **2000000**. Select **Change bps** and change it to **115200**
-   Device should blink a couple of times. (three if remember correctly). After baund change is written into the device change the baud rate connection in the software.
-3. Select **CAN Speed** that matches the speed of the **EMU Black**. In my case 500kpbs (the same as the bluetooth module)
-4. Use **Normal mode**
-5. Use **Standard Frame**
-6. Select **Start and Monitor** to verify the device operation. CAN BUS state on the EMU Black software should be green. If everyting is fine there should be data comming into the software. If not reset the device by shortening the **Default** pin and try again. It took me a few days to figure this out.(when default is shorten disconnect the USB from the device and connect it again)
+   1. Select **COM** port X
+   2. The default BAUD rate is **2000000**. Select **Change bps** and change it to **115200**
+      Device should blink a couple of times. (three if remember correctly). After baund change is written into the device change the baud rate connection in the software.
+   3. Select **CAN Speed** that matches the speed of the **EMU Black**. In my case 500kpbs (the same as the bluetooth module)
+   4. Use **Normal mode**
+   5. Use **Standard Frame**
+   6. Select **Start and Monitor** to verify the device operation. CAN BUS state on the EMU Black software should be green. If everyting is fine there should be data comming into the software. If not reset the device by shortening the **Default** pin and try again. It took me a few days to figure this out.(when default is shorten disconnect the USB from the device and connect it again)
 
 
 ## XML File
 XML file configration can be found here. 
 It uses the Default base ID which is 0x600 but cna be changed in EMU Black Software
 [RD-EMUBlack.xml](./src/rd-emublack.xml)
+
+## Real Dash configuration
+
+Start Real dash for android.
+   1. Add a new connection - **Adapters(CAN)**
+   2. Select **CAN Analyzer**
+   3. Select **Serial/USB** connection
+   4. Use **115200 kbps** 
+   5. Use Custom XML transformation file provided in this repo
+   6. Select Frame mode - **Normal**
+   7. Choose **500kbps** for speed
+   8. Use **CAN Monitor** to check connectivity
+
 ## To Do
 
 - [ ] Assign buttons to Real Dash
