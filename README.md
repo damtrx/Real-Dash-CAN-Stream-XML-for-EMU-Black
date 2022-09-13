@@ -10,9 +10,9 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 # Table of Contents
 1. [Hardware](#Hardware)
 2. [Software](#Software)
-3. [XML File](#XML%20File)
-4. [Real Dash custom dash](#Real%20Dash%custom%20dash)
-5. [To Do](#To%20Do)
+3. [XML File](#xml-File)
+4. [Real Dash custom dash](#real-dash-custom-dash)
+5. [To Do](#to-to)
 
 
 ## Hardware
