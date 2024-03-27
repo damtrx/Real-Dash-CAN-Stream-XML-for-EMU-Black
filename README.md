@@ -11,8 +11,10 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 1. [Hardware](#Hardware)
 2. [Software](#Software)
 3. [XML File](#xml-File)
-4. [Real Dash configuratio](#real-dash-configuration)
-5. [To Do](#to-to)
+4. [Real Dash configuration](#real-dash-configuration)
+5. [Real Dash enable CAN Switch](#real-dash-can-switch)
+6. [Real Dash enable custom CAN Frames](#real-dash-custom-can-frames)
+7. [To Do](#to-to)
 
 
 ## Hardware
@@ -85,6 +87,12 @@ Start Real dash for android.
 
    XML File is updated!
    Use RealDash actions to assign value of 1 to the CAN Switch.
+
+## Real Dash custom CAN frames 
+   Here is an example of how to send custom CAN frame into the network. I'm using Knock sensor voltage value.
+   Decided to multiple the value by 100 and then scale it back to the proper value from realdash xml
+   ![Custom CAN frame](/img/KnockSensorCANFrame.png)
+
 
 ## To Do
 
