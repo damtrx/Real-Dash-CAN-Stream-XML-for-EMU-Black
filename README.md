@@ -1,6 +1,6 @@
 # Real Dash USB to CAN XML example for EMU Black
 
-This repository contains XML files and maybe other examples needed to connect Ecumaster EMU Black with USB to CAN Analyzer via CAN bus network.
+This repository contains XML files and maybe other examples needed to connect EcuMaster EMU Black with USB to CAN Analyzer via CAN bus network.
 
 This project is still work in progress, but it can be used as base configuration for Real Dash.
 
@@ -18,7 +18,7 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 
 
 ## Hardware
-I'm using USB to CAN module to connect the EMU Black CAN interface to my Android Headunit device which didn't support Bluetooth module.
+I'm using USB to CAN module to connect the EMU Black CAN interface to my Android Head unit device which didn't support Bluetooth module.
 
 Using USB connection is more reliable and can give me an option to send back CAN Stream data for inputs like buttons. The purpose of this might be to change Boost tables or other things during normal operation.
 
@@ -32,7 +32,7 @@ I have used the following cheap USB to CAN module:
 
 ### Wiring
 
-Connect CAN-L and CAN-H to the coresponding pins of the USB to CAN Device.
+Connect CAN-L and CAN-H to the corresponding pins of the USB to CAN Device.
 Connect Ground to USB to CAN Device ground.
 
 If 120ohm resistor is present in the CAN Bus network then remove the jumper from the USB to CAN Device.
@@ -58,11 +58,11 @@ If needed explore the [software](/src/USB-CAN-Software) folder for more informat
    3. Select **CAN Speed** that matches the speed of the **EMU Black**. In my case 500kpbs (the same as the bluetooth module)
    4. Use **Normal mode**
    5. Use **Standard Frame**
-   6. Select **Start and Monitor** to verify the device operation. CAN BUS state on the EMU Black software should be green. If everyting is fine there should be data comming into the USB to CAN software. If not reset the device by shortening the **Default** pin and try again. It took me a few days to figure this out.(when **default** is shorten disconnect the USB from the device and connect it again)
+   6. Select **Start and Monitor** to verify the device operation. CAN BUS state on the EMU Black software should be green. If everything is fine there should be data coming into the USB to CAN software. If not reset the device by shortening the **Default** pin and try again. It took me a few days to figure this out.(when **default** is shorten disconnect the USB from the device and connect it again)
 
 
 ## XML File
-XML file configration can be found here. 
+XML file configuration can be found here. 
 It uses the Default base ID which is 0x600 but can be changed in EMU Black Software
 [RD-EMUBlack.xml](./src/rd-emublack.xml)
 
@@ -90,7 +90,7 @@ Start Real dash for android.
 
 ## Real Dash custom CAN frames 
    Here is an example of how to send custom CAN frame into the network. I'm using Knock sensor voltage value.
-   Decided to multiple the value by 100 and then scale it back to the proper value from realdash xml
+   Decided to multiple the value by 100 and then scale it back to the proper value from RealDash xml
    ![Custom CAN frame](/img/KnockSensorCANFrame.png)
 
 
@@ -98,4 +98,4 @@ Start Real dash for android.
 
 - [X] Assign buttons to Real Dash
 - [ ] FIX Check Engine Lights BITflag parameters
-- [X] Confugre custom Knock can stream
+- [X] Configure custom Knock can stream
