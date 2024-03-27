@@ -78,8 +78,16 @@ Start Real dash for android.
    7. Choose **500kbps** for speed
    8. Use **CAN Monitor** to check connectivity
 
+   
+## Real Dash CAN Switch 
+   RealDash developers are awesome. I was able to send CAN Switch 1 to the EMU Black from RealDash back to the ECU
+   ![CAN Switch config](/img/cansw1.png)
+
+   XML File is updated!
+   Use RealDash actions to assign value of 1 to the CAN Switch.
+
 ## To Do
 
-- [ ] Assign buttons to Real Dash
+- [X] Assign buttons to Real Dash
 - [ ] FIX Check Engine Lights BITflag parameters
-- [ ] Confugre custom Knock can stream
+- [X] Confugre custom Knock can stream
