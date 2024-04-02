@@ -14,7 +14,10 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 4. [Real Dash configuration](#real-dash-configuration)
 5. [Real Dash enable CAN Switch](#real-dash-can-switch)
 6. [Real Dash enable custom CAN Frames](#real-dash-custom-can-frames)
-7. [To Do](#to-to)
+7. [Real Dash example](#real-dash-screenshots)
+8. [Real Dash example file](/src/newdash2.rd)
+9. [To Do](#to-to)
+
 
 
 ## Hardware
@@ -93,6 +96,28 @@ Start Real dash for android.
    Decided to multiple the value by 100 and then scale it back to the proper value from RealDash xml
    ![Custom CAN frame](/img/KnockSensorCANFrame.png)
 
+## Real Dash screenshots
+### Main screen features
+  - Songs - Prev/Next
+  - Lambda graph
+  - OIL pressure/ OIL Temp
+  - RPM
+  - TPS
+  - Ignition advance
+  - Battery
+  - Coolant
+  - [RealDash Example File](./src/newdash2.rd) 
+ ![Main screen](/img/Dashboard.png)
+
+### Knock sensor page
+  - Knock sensor value
+  - Knock sensor table
+  - TPS
+![Knock screen](/img/KnockValues.png)
+
+### PoC button 
+  - CAN Switch 1
+![CAN PoC](/img/ButtonExample.png)
 
 ## To Do
 

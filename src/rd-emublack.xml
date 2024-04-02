@@ -64,7 +64,7 @@
 
     </frame>
     <frame id="0x666" writeInterval="1000">
-        <value name="EMU Black: Analog #1" offset="0" length="2"></value>
+        <value name="EMU Black: Analog #1" offset="0" length="2" units="V"></value>
         <value name="EMU Black: Analog #2" offset="2" length="2"></value>
         <value name="EMU Black: CALPOT 1" offset="4" length="1"></value>
         <value name="EMU Black: CALPOT 2" offset="5" length="1"></value>
