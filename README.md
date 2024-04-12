@@ -13,10 +13,11 @@ I'm choosing Real Dash because it is a cheap alternative to ADU units and can be
 3. [XML File](#xml-File)
 4. [Real Dash configuration](#real-dash-configuration)
 5. [Real Dash enable CAN Switch](#real-dash-can-switch)
-6. [Real Dash enable custom CAN Frames](#real-dash-custom-can-frames)
-7. [Real Dash example](#real-dash-screenshots)
-8. [Real Dash example file](/src/newdash2.rd)
-9. [To Do](#to-to)
+6. [CAN Switch feedback](#can-switch-feedback-switch)
+7. [Real Dash enable custom CAN Frames](#real-dash-custom-can-frames)
+8. [Real Dash example](#real-dash-screenshots)
+9. [Real Dash example file](/src/newdash2.rd)
+10. [To Do](#to-to)
 
 
 
@@ -90,6 +91,13 @@ Start Real dash for android.
 
    XML File is updated!
    Use RealDash actions to assign value of 1 to the CAN Switch.
+
+## CAN Switch feedback switch
+   It turned out that when you send 1 as value to the CAN network and flip a switch the EMUJ Black doesn't return the state.
+   This is needed to allow RealDash to distinguish the state of the Switch
+
+   Create a new 0x667 can stream with all the Switches and send the bits to RealDash
+   ![Switch CAN State](/img/can-sw-feedback.png)
 
 ## Real Dash custom CAN frames 
    Here is an example of how to send custom CAN frame into the network. I'm using Knock sensor voltage value.

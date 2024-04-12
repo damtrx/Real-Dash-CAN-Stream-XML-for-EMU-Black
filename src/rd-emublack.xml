@@ -25,7 +25,7 @@
       <value targetId="151" offset="4" length="1" conversion="V*0.0625" rangeMin="0" rangeMax="12"></value> <!--OIL Pressure-->
     </frame>
     <frame id="0x603" endianess="little"><!--EMU CAN Stream - ID 3-->
-      <value targetId="254" offset="2" length="1"conversion="V*0.0078125" ></value> <!-- Lambda 1 -->
+      <value targetId="254" offset="2" length="1" conversion="V*0.0078125" ></value> <!-- Lambda 1 -->
       <value targetId="0" offset="2" length="1" conversion="V*14.7*0.0078125"></value> <!-- AFR -->
       <value targetId="38" offset="0" length="1" conversion="0.5*V" rangeMin="-60" rangeMax="60" signed="true" ></value> <!-- Ignition Angle -->
       <value targetId="23" offset="1" length="1" conversion="V*0.05"></value> <!-- Ignition Dwell -->
@@ -43,13 +43,16 @@
       <value name="EMU Black: Knocking detected" offset="4" length="2" units="bit" startbit="7" bitCount="1"></value>  <!--CEL Knocking detected -->
       <!-- <value name="EMU Black: EGT2 Sensor failed" offset="4" length="2" units="bit" startbit="5" bitCount="1"></value> <CEL EGT sensor #2 failed  -->
       <!-- <value name="EMU Black: Flex Fuel Sensor failed" offset="4" length="2" units="bit" startbit="8" bitCount="1"></value><CEL Flex Fuel sensor failed  -->
-      <!-- <value name="EMU Black: Drive by wire failure" offset="4" length="2" units="bit" startbit="9" bitCount="1"></value><CEL Drive by wire failure  -->
+      <value name="EMU Black: Drive by wire failure" offset="4" length="2" units="bit" startbit="9" bitCount="1"></value><!--CEL Drive by wire failure  -->
       <!-- <value name="EMU Black: Fuel pressure relative error" offset="4" length="2" units="bit" startbit="10" bitCount="1"></value><CEL Fuel pressure relative error  -->
       <value targetId="230" offset="6" length="1" unit="bit" startbit="7" bitCount="1" ></value><!--Brake Pedal Percentage(it is 0 or 100 because it is a switch)-->
     </frame>
     <frame id="0x606" endianess="little"><!--EMU CAN Stream - ID 6-->
        <value name="EMU Black: Analog-5-AC-Voltage" offset="0" length="2" conversion="V*0.0049" units="V"></value><!--Analog 5(ac state from All4Swap)-->
        <value name="EMU Black: Analog-6-DBW2" offset="2" length="2" conversion="V*0.0049" units="V"></value><!--Analog 6-->
+       <value name="EMU Black: Mux switch 1" offset="6" length="1" unit="bit" startbit="3" bitCount="1"></value><!--mux sw1-->
+       <value name="EMU Black: Mux switch 2" offset="6" length="1" unit="bit" startbit="4" bitCount="1"></value><!--mux sw2-->
+       <value name="EMU Black: Mux switch 2" offset="6" length="1" unit="bit" startbit="5" bitCount="1"></value><!--mux sw3-->
        <value targetId="335" offset="7" length="1" units="bit"  startbit="3" bitCount="1"></value><!--AC State-->
     </frame>
     <frame id="0x607" endianess="little"><!--EMU CAN Stream - ID 7-->
@@ -63,11 +66,12 @@
        <value name="EMU Black: Knock-graph" offset="2" length="1" conversion="V*0.01" units="V"></value> <!--Knock Sensor Value-->
 
     </frame>
-    <frame id="0x666" writeInterval="1000">
+    <frame id="0x666" endianess="little" writeInterval="400">
         <value name="EMU Black: Analog #1" offset="0" length="2" units="V"></value>
         <value name="EMU Black: Analog #2" offset="2" length="2"></value>
         <value name="EMU Black: CALPOT 1" offset="4" length="1"></value>
         <value name="EMU Black: CALPOT 2" offset="5" length="1"></value>
+        <!--
         <value name="EMU Black: Switch 1" offset="6" length="1" units="bit"></value>
         <value name="EMU Black: Switch 2" offset="6" length="1" units="bit" conversion="V>>1"></value>
         <value name="EMU Black: Switch 3" offset="6" length="1" units="bit" conversion="V>>2"></value>
@@ -76,7 +80,28 @@
         <value name="EMU Black: Switch 6" offset="6" length="1" units="bit" conversion="V>>5"></value>
         <value name="EMU Black: Switch 7" offset="6" length="1" units="bit" conversion="V>>6"></value>
         <value name="EMU Black: Switch 8" offset="6" length="1" units="bit" conversion="V>>7"></value>
+          -->
+        <value name="EMU Black: Switch 1" offset="6" length="1" units="bit" startbit="0" bitCount="1"></value>
+        <value name="EMU Black: Switch 2" offset="6" length="1" units="bit" startbit="1" bitCount="1"></value>
+        <value name="EMU Black: Switch 3" offset="6" length="1" units="bit" startbit="2" bitCount="1"></value>
+        <!--<value name="EMU Black: Switch 4" offset="6" length="1" units="bit" startbit="3" bitCount="1"></value>-->
+        <value name="EMU Black: Switch 4" offset="6" length="1" units="bit" startbit="4" bitCount="1"></value>
+        <value name="EMU Black: Switch 5" offset="6" length="1" units="bit" startbit="5" bitCount="1"></value>
+        <value name="EMU Black: Switch 6" offset="6" length="1" units="bit" startbit="6" bitCount="1"></value>
+        <value name="EMU Black: Switch 7" offset="6" length="1" units="bit" startbit="7" bitCount="1"></value>
+       
+        
         <value name="EMU Black: Heartbeat" offset="7" length="1"></value>
+    </frame>
+        <frame id="0x667" endianess="little">
+
+        <value name="EMU Black: Switch 2 VAL" offset="6" length="1" units="bit" conversion="V>>1"></value>
+        <value name="EMU Black: Switch 3 VAL" offset="6" length="1" units="bit" conversion="V>>2"></value>
+        <value name="EMU Black: Switch 4 VAL" offset="6" length="1" units="bit" conversion="V>>3"></value>
+        <value name="EMU Black: Switch 5 VAL" offset="6" length="1" units="bit" conversion="V>>4"></value>
+        <value name="EMU Black: Switch 6 VAL" offset="6" length="1" units="bit" conversion="V>>5"></value>
+        <value name="EMU Black: Switch 7 VAL" offset="6" length="1" units="bit" conversion="V>>6"></value>
+       
     </frame>
 
 </frames>
