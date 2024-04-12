@@ -92,8 +92,19 @@ Start Real dash for android.
    XML File is updated!
    Use RealDash actions to assign value of 1 to the CAN Switch.
 
+   CAN Switches that works with RealDash at the moment
+   [] Can Switch 1
+   [x] Can Switch 2
+   [x] Can Switch 3
+   [x] Can Switch 4
+   [x] Can Switch 5
+   [x] Can Switch 6
+   [x] Can Switch 7
+   [] Can Switch 8
+
+
 ## CAN Switch feedback switch
-   It turned out that when you send 1 as value to the CAN network and flip a switch the EMUJ Black doesn't return the state.
+   It turned out that when you send 1 as value to the CAN network and flip a switch the EMU Black doesn't return the state.
    This is needed to allow RealDash to distinguish the state of the Switch
 
    Create a new 0x667 can stream with all the Switches and send the bits to RealDash
