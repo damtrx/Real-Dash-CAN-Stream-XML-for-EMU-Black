@@ -93,14 +93,14 @@ Start Real dash for android.
    Use RealDash actions to assign value of 1 to the CAN Switch.
 
    CAN Switches that works with RealDash at the moment
-  - [] Can Switch 1
+  - [ ] Can Switch 1
   - [X] Can Switch 2
   - [X] Can Switch 3
   - [X] Can Switch 4
   - [X] Can Switch 5
   - [X] Can Switch 6
   - [X] Can Switch 7
-  - [] Can Switch 8
+  - [ ] Can Switch 8
 
 
 ## CAN Switch feedback switch
