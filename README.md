@@ -80,6 +80,7 @@ Start Real dash for android.
    3. Select **Serial/USB** connection
    4. Use **115200 kbps** 
    5. Use Custom XML transformation file provided in this repo
+      ![XML](/img/CanDescriptor.png)
    6. Select Frame mode - **Normal**
    7. Choose **500kbps** for speed
    8. Use **CAN Monitor** to check connectivity
@@ -125,8 +126,9 @@ Start Real dash for android.
   - Ignition advance
   - Battery
   - Coolant
-  - [RealDash Example File](./src/newdash2.rd) 
+  - [RealDash Example File](./src/CELBits.rd) 
  ![Main screen](/img/Dashboard.png)
+ ![Update Main Screen](/img/Dashboard-optimized.png)
 
 ### Knock sensor page
   - Knock sensor value
