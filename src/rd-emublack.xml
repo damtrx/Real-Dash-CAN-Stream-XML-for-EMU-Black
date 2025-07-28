@@ -27,32 +27,42 @@
     <frame id="0x603" endianess="little"><!--EMU CAN Stream - ID 3-->
       <value targetId="254" offset="2" length="1" conversion="V*0.0078125" ></value> <!-- Lambda 1 -->
       <value targetId="0" offset="2" length="1" conversion="V*14.7*0.0078125"></value> <!-- AFR -->
+      <value name="EMU Black: Short Trim"  offset="3" length="1" conversion="0.5*V" rangeMin="75" rangeMax="125"></value> <!-- Short trim  1  -->
       <value targetId="38" offset="0" length="1" conversion="0.5*V" rangeMin="-60" rangeMax="60" signed="true" ></value> <!-- Ignition Angle -->
       <value targetId="23" offset="1" length="1" conversion="V*0.05"></value> <!-- Ignition Dwell -->
     </frame>
     <frame id="0x604" endianess="little"><!--EMU CAN Stream - ID 4-->
       <value targetId="200" offset="0" length="1" conversion="V"></value> <!-- Gear -->
       <value targetId="12" offset="2" length="2"  conversion="V*0.027"></value> <!-- Battery Voltage -->
-      <value name="EMU Black: Check engine light" offset="4" length="2" units="V"></value><!--Check engine light-->
-      <!-- <value name="EMU Black: CLT Sensor Error" offset="4" length="2" units="bit"></value> <CEL Coolant temperature sensor failed -->
-      <!-- <value name="EMU Black: IAT Sensor Error" offset="4" length="2" units="bit" conversion="V>>1"></value> <CEL IAT sensor failed  -->
-      <!-- <value name="EMU Black: MAP Sensor failed" offset="4" length="2" units="bit" startbit="2" bitCount="1"></value>  <CEL MAP sensor failed  -->
-      <!-- <value name="EMU Black: WBO Sensor failed" offset="4" length="2" units="bit" startbit="3" bitCount="1"></value>  <CEL Wide band oxygen sensor failed  -->
-      <!-- <value name="EMU Black: EGT1 Sensor failed" offset="4" length="2" units="bit" startbit="4" bitCount="1"></value> <CEL EGT sensor #1 failed  -->
-      <!-- <value name="EMU Black: EGT too high" offset="4" length="2" units="bit" startbit="6" bitCount="1"></value>       <CEL EGT too high  -->
-      <value name="EMU Black: Knocking detected" offset="4" length="2" units="bit" startbit="7" bitCount="1"></value>  <!--CEL Knocking detected -->
-      <!-- <value name="EMU Black: EGT2 Sensor failed" offset="4" length="2" units="bit" startbit="5" bitCount="1"></value> <CEL EGT sensor #2 failed  -->
-      <!-- <value name="EMU Black: Flex Fuel Sensor failed" offset="4" length="2" units="bit" startbit="8" bitCount="1"></value><CEL Flex Fuel sensor failed  -->
-      <value name="EMU Black: Drive by wire failure" offset="4" length="2" units="bit" startbit="9" bitCount="1"></value><!--CEL Drive by wire failure  -->
-      <!-- <value name="EMU Black: Fuel pressure relative error" offset="4" length="2" units="bit" startbit="10" bitCount="1"></value><CEL Fuel pressure relative error  -->
-      <value targetId="230" offset="6" length="1" unit="bit" startbit="7" bitCount="1" ></value><!--Brake Pedal Percentage(it is 0 or 100 because it is a switch)-->
+      <value name="EMU Black: CLT Sensor Error" offset="4" length="2" units="bit" conversion="V>>0" rangeMin="0" rangeMax="1"></value>  <!--CLT error-->
+      <value name="EMU Black: IAT Sensor Error" offset="4" length="2" units="bit" conversion="V>>1" rangeMin="0" rangeMax="1"></value>  <!--IAT error-->
+      <value name="EMU Black: MAP Sensor failed" offset="4" length="2" units="bit" onversion="V>>2" rangeMin="0" rangeMax="1"></value> <!-- MAP sensor failed  -->
+      <value name="EMU Black: WBO Sensor failed" offset="4" length="2" units="bit" conversion="V>>3" rangeMin="0" rangeMax="1"></value>  <!--CEL Wide band oxygen sensor failed  -->
+      <value name="EMU Black: EGT1 Sensor failed" offset="4" length="2" units="bit" conversion="V>>4" rangeMin="0" rangeMax="1"></value> <!--CEL EGT sensor #1 failed  -->
+      <value name="EMU Black: EGT2 Sensor failed" offset="4" length="2" units="bit" conversion="V>>5" rangeMin="0" rangeMax="1"></value> <!--CEL EGT sensor #2 failed  -->
+      <value name="EMU Black: EGT too high" offset="4" length="2" units="bit" conversion="V>>6" rangeMin="0" rangeMax="1"></value>      <!--CEL EGT too high  -->
+      <value name="EMU Black: Knocking detected" offset="4" length="2" units="bit" conversion="V>>7" rangeMin="0" rangeMax="1"></value>  <!--Knock -->
+      <value name="EMU Black: Flex Fuel Sensor failed" offset="4" length="2" units="bit" conversion="V>>8" rangeMin="0" rangeMax="1"></value><!--CEL Flex Fuel sensor failed  -->
+      <value name="EMU Black: Drive by wire failure" offset="4" length="2" units="bit" conversion="V>>9" rangeMin="0" rangeMax="1"></value><!--CEL Drive by wire failure  -->
+      <value name="EMU Black: Fuel pressure relative error" offset="4" length="2" units="bit" conversion="V>>10" rangeMin="0" rangeMax="1"></value><!--CEL Fuel pressure relative error  -->
+      <value name="EMU Black: ECU Temp" offset="1" length="1" conversion="V"></value><!--ECU Temp-->
+      <value targetId="230" offset="6" length="1" units="bit" conversion="V>>7"></value><!--Brake Pedal Percentage(it is 0 or 100 because it is a switch)-->
+      <value targetId="396" offset="6" length="1" units="bit" conversion="V>>3"></value><!--Idle - on/off)-->
+      <value targetId="153" offset="7" length="1" units="bit" conversion="V>>1"></value><!--Coolant Fan)-->
+
+      
+
     </frame>
     <frame id="0x606" endianess="little"><!--EMU CAN Stream - ID 6-->
        <value name="EMU Black: Analog-5-AC-Voltage" offset="0" length="2" conversion="V*0.0049" units="V"></value><!--Analog 5(ac state from All4Swap)-->
        <value name="EMU Black: Analog-6-DBW2" offset="2" length="2" conversion="V*0.0049" units="V"></value><!--Analog 6-->
-       <value name="EMU Black: Mux switch 1" offset="6" length="1" unit="bit" startbit="3" bitCount="1"></value><!--mux sw1-->
-       <value name="EMU Black: Mux switch 2" offset="6" length="1" unit="bit" startbit="4" bitCount="1"></value><!--mux sw2-->
-       <value name="EMU Black: Mux switch 2" offset="6" length="1" unit="bit" startbit="5" bitCount="1"></value><!--mux sw3-->
+       <value name="EMU Black: Mux switch 1" offset="6" length="1" units="bit" conversion="V>>3"></value><!--mux sw1-->
+       <value name="EMU Black: Mux switch 2" offset="6" length="1" units="bit" conversion="V>>4"></value><!--mux sw2-->
+       <value name="EMU Black: Mux switch 3" offset="6" length="1" units="bit" conversion="V>>5"></value><!--mux sw3-->
+       <value name="EMU Black: AC" offset="7" length="1" units="bit" conversion="V>>2"></value><!--AC clutch-->
+       <value name="EMU Black: Coolant Fan" offset="7" length="1" units="bit" conversion="V>>1"></value><!--Coolant fan-->
+
+
        <value targetId="335" offset="7" length="1" units="bit"  startbit="3" bitCount="1"></value><!--AC State-->
     </frame>
     <frame id="0x607" endianess="little"><!--EMU CAN Stream - ID 7-->
@@ -101,6 +111,8 @@
         <value name="EMU Black: Switch 5 VAL" offset="6" length="1" units="bit" conversion="V>>4"></value>
         <value name="EMU Black: Switch 6 VAL" offset="6" length="1" units="bit" conversion="V>>5"></value>
         <value name="EMU Black: Switch 7 VAL" offset="6" length="1" units="bit" conversion="V>>6"></value>
+        <value name="EMU Black: AC Clutch" offset="0" length="1" units="bit"  startbit="0" bitCount="1"></value><!--AC State-->
+
        
     </frame>
 

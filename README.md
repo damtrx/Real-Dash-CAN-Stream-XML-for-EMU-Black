@@ -141,5 +141,5 @@ Start Real dash for android.
 ## To Do
 
 - [X] Assign buttons to Real Dash
-- [ ] FIX Check Engine Lights BITflag parameters
+- [X] FIX Check Engine Lights BITflag parameters
 - [X] Configure custom Knock can stream
