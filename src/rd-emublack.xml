@@ -23,6 +23,7 @@
       <value targetId="14" offset="6" length="2"></value> <!-- Coolant -->
       <value targetId="152" offset="3" length="1" conversion="V" rangeMin="0" rangeMax="160"></value> <!--OIL Temp-->
       <value targetId="151" offset="4" length="1" conversion="V*0.0625" rangeMin="0" rangeMax="12"></value> <!--OIL Pressure-->
+      <value targetId="202" offset="5" length="1" conversion="V*0.0625" rangeMin="0" rangeMax="12"></value> <!--Fuel Pressure-->
     </frame>
     <frame id="0x603" endianess="little"><!--EMU CAN Stream - ID 3-->
       <value targetId="254" offset="2" length="1" conversion="V*0.0078125" ></value> <!-- Lambda 1 -->
